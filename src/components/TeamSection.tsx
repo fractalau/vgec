@@ -20,7 +20,7 @@ const team = [
     role: "Director",
     quals: "BEng (Mech), MBA, MIEAust, GAICD",
     bio: "Engineer with 40+ years in the electricity industry, from power stations to privatisations at Hazelwood and Loy Yang. Former director of McLennan Magasanik Associates.",
-    photo: "/images/team-bob-graham.jpg",
+    photo: "/images/team-mark-elliott.jpg",
   },
   {
     name: "Luis Urzua",
