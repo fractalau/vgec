@@ -54,9 +54,12 @@ const TeamSection = () => {
             <SectionReveal key={i} delay={i * 80}>
               <div className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center shrink-0">
-                    {person.initials}
-                  </div>
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    className="w-16 h-16 rounded-full object-cover object-top shrink-0 shadow-sm"
+                    loading="lazy"
+                  />
                   <div>
                     <h3 className="font-serif text-lg text-foreground leading-tight">{person.name}</h3>
                     <p className="text-primary text-sm font-medium">{person.role}</p>
