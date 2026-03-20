@@ -6,35 +6,35 @@ const team = [
     role: "Chair (Co-Founder)",
     quals: "BSc(Hons), MPESA, MAusIMM",
     bio: "Geologist with 50 years of experience. Founding MD of Queensland Gas NL ($5B), Great Artesian Oil & Gas, Blue Energy, Hot Rock and Real Energy. Working in geothermal since 2006.",
-    initials: "NZ",
+    photo: "/images/team-norm-zillman.jpg",
   },
   {
     name: "Dr Mark Elliott",
     role: "Managing Director (Co-Founder)",
     quals: "Dip.App.Geol, PhD, FAusIMM, FAIG, FAICD, MAGA",
     bio: "Economic geologist with 40+ years in exploration and project development. Co-founding director of Hot Rock Ltd and several mining companies. In geothermal since 2006.",
-    initials: "ME",
+    photo: "/images/team-mark-elliott.jpg",
   },
   {
     name: "Bob Graham",
     role: "Director",
     quals: "BEng (Mech), MBA, MIEAust, GAICD",
     bio: "Engineer with 40+ years in the electricity industry, from power stations to privatisations at Hazelwood and Loy Yang. Former director of McLennan Magasanik Associates.",
-    initials: "BG",
+    photo: "/images/team-bob-graham.jpg",
   },
   {
     name: "Luis Urzua",
     role: "Geothermal Consultant",
     quals: "BSc (Geol), MSc, MGRC",
     bio: "Geothermal geologist with 24 years experience in exploration, resource assessment and operations. Involved in drilling 40 wells to depths of up to 3,800m across multiple countries.",
-    initials: "LU",
+    photo: "/images/team-luis-urzua.jpg",
   },
   {
     name: "Randall Taylor",
     role: "Geophysicist Consultant",
     quals: "BSc App (Geophysics), SEG, ASEG",
     bio: "40+ years in seismic interpretation, survey design and data-processing. Over 10 years as Chief Geophysicist for Origin Energy. Specialist in petroleum, geothermal and mineral systems.",
-    initials: "RT",
+    photo: "/images/team-randall-taylor.jpg",
   },
 ];
 
@@ -54,9 +54,12 @@ const TeamSection = () => {
             <SectionReveal key={i} delay={i * 80}>
               <div className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 text-primary font-semibold text-sm flex items-center justify-center shrink-0">
-                    {person.initials}
-                  </div>
+                  <img
+                    src={person.photo}
+                    alt={person.name}
+                    className="w-16 h-16 rounded-full object-cover object-top shrink-0 shadow-sm"
+                    loading="lazy"
+                  />
                   <div>
                     <h3 className="font-serif text-lg text-foreground leading-tight">{person.name}</h3>
                     <p className="text-primary text-sm font-medium">{person.role}</p>
