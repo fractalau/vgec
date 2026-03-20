@@ -57,7 +57,8 @@ const TeamSection = () => {
                   <img
                     src={person.photo}
                     alt={person.name}
-                    className="w-16 h-16 rounded-full object-cover object-top shrink-0 shadow-sm"
+                    className="w-16 h-16 rounded-full object-cover shrink-0 shadow-sm"
+                    style={{ objectPosition: "center 20%" }}
                     loading="lazy"
                   />
                   <div>
