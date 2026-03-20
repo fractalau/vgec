@@ -13,7 +13,7 @@ const team = [
     role: "Managing Director (Co-Founder)",
     quals: "Dip.App.Geol, PhD, FAusIMM, FAIG, FAICD, MAGA",
     bio: "Economic geologist with 40+ years in exploration and project development. Co-founding director of Hot Rock Ltd and several mining companies. In geothermal since 2006.",
-    photo: "/images/team-mark-elliott.jpg",
+    photo: "/images/team-bob-graham.jpg",
   },
   {
     name: "Bob Graham",
