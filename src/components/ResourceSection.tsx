@@ -14,78 +14,76 @@ const ResourceSection = () => {
           </p>
         </SectionReveal>
 
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
-          <div className="lg:col-span-3">
-            <SectionReveal>
-              <div className="rounded-lg overflow-hidden shadow-lg mb-8">
-                <img
-                  src="/images/grl-lease-map.jpg"
-                  alt="Geothermal Retention Lease GRL7012 map showing the Koroit project area"
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </div>
-            </SectionReveal>
-          </div>
+        {/* Two equal blocks side by side */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <SectionReveal>
+            <div className="bg-earth-warm rounded-lg p-6 md:p-8 h-full">
+              <h3 className="font-serif text-xl text-foreground mb-5">Resource Estimate (P50)</h3>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-2 font-semibold text-foreground">Type</th>
+                    <th className="text-right py-2 font-semibold text-foreground">Area (km²)</th>
+                    <th className="text-right py-2 font-semibold text-foreground">Heat (PJ)</th>
+                  </tr>
+                </thead>
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b border-border/50">
+                    <td className="py-2.5">Indicated</td>
+                    <td className="text-right tabular-nums">50</td>
+                    <td className="text-right tabular-nums">7,620</td>
+                  </tr>
+                  <tr className="border-b border-border/50">
+                    <td className="py-2.5">Inferred</td>
+                    <td className="text-right tabular-nums">400</td>
+                    <td className="text-right tabular-nums">58,500</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2.5 font-semibold text-foreground">Total</td>
+                    <td className="text-right tabular-nums font-semibold text-foreground">450</td>
+                    <td className="text-right tabular-nums font-semibold text-foreground">66,100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </SectionReveal>
 
-          <div className="lg:col-span-2 space-y-8">
-            <SectionReveal delay={100}>
-              <div className="bg-earth-warm rounded-lg p-6">
-                <h3 className="font-serif text-lg text-foreground mb-4">Resource Estimate (P50)</h3>
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-border">
-                      <th className="text-left py-2 font-semibold text-foreground">Type</th>
-                      <th className="text-right py-2 font-semibold text-foreground">Area (km²)</th>
-                      <th className="text-right py-2 font-semibold text-foreground">Heat (PJ)</th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-muted-foreground">
-                    <tr className="border-b border-border/50">
-                      <td className="py-2.5">Indicated</td>
-                      <td className="text-right tabular-nums">50</td>
-                      <td className="text-right tabular-nums">7,620</td>
-                    </tr>
-                    <tr className="border-b border-border/50">
-                      <td className="py-2.5">Inferred</td>
-                      <td className="text-right tabular-nums">400</td>
-                      <td className="text-right tabular-nums">58,500</td>
-                    </tr>
-                    <tr>
-                      <td className="py-2.5 font-semibold text-foreground">Total</td>
-                      <td className="text-right tabular-nums font-semibold text-foreground">450</td>
-                      <td className="text-right tabular-nums font-semibold text-foreground">66,100</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </SectionReveal>
-
-            <SectionReveal delay={200}>
-              <div className="space-y-4">
-                <h3 className="font-serif text-lg text-foreground">Key Details</h3>
-                <ul className="space-y-3 text-sm text-muted-foreground">
-                  <li className="flex gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                    <span>Reservoir mainly within the Pretty Hill Formation — permeable, fractured coarse to fine-grained sandstone</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                    <span>Resource top at 130°C isotherm around 2.8 km depth, extending to 4 km</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                    <span>Highest geothermal gradient in the Otway Basin — up to 40°C/km</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
-                    <span>Resource estimation compliant with Australian Lexicon for Resources and Reserves (2010)</span>
-                  </li>
-                </ul>
-              </div>
-            </SectionReveal>
-          </div>
+          <SectionReveal delay={120}>
+            <div className="bg-earth-warm rounded-lg p-6 md:p-8 h-full">
+              <h3 className="font-serif text-xl text-foreground mb-5">Key Details</h3>
+              <ul className="space-y-4 text-sm text-muted-foreground">
+                <li className="flex gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                  <span>Reservoir mainly within the Pretty Hill Formation — permeable, fractured coarse to fine-grained sandstone</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                  <span>Resource top at 130°C isotherm around 2.8 km depth, extending to 4 km</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                  <span>Highest geothermal gradient in the Otway Basin — up to 40°C/km</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                  <span>Resource estimation compliant with Australian Lexicon for Resources and Reserves (2010)</span>
+                </li>
+              </ul>
+            </div>
+          </SectionReveal>
         </div>
+
+        {/* Map below */}
+        <SectionReveal delay={200}>
+          <div className="rounded-lg overflow-hidden shadow-lg max-w-3xl mx-auto">
+            <img
+              src="/images/grl-lease-map.jpg"
+              alt="Geothermal Retention Lease GRL7012 map showing the Koroit project area"
+              className="w-full h-auto"
+              loading="lazy"
+            />
+          </div>
+        </SectionReveal>
       </div>
     </section>
   );
