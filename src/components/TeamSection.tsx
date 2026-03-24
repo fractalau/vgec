@@ -40,7 +40,7 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section id="team" className="py-24 md:py-32 bg-background">
+    <section id="team" aria-label="Leadership team" className="py-24 md:py-32 bg-background">
       <div className="max-w-6xl mx-auto section-padding">
         <SectionReveal>
           <p className="text-primary font-semibold text-sm uppercase tracking-[0.15em] mb-3">Leadership</p>
@@ -52,11 +52,11 @@ const TeamSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {team.map((person, i) => (
             <SectionReveal key={i} delay={i * 80}>
-              <div className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
+              <article className="bg-card rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                 <div className="flex items-center gap-4 mb-4">
                   <img
                     src={person.photo}
-                    alt={person.name}
+                    alt={`Headshot of ${person.name}, ${person.role} at VGEC`}
                     className="w-16 h-16 rounded-full object-cover shrink-0 shadow-sm"
                     style={{ objectPosition: "center 20%" }}
                     loading="lazy"
@@ -68,7 +68,7 @@ const TeamSection = () => {
                 </div>
                 <p className="text-xs text-muted-foreground/70 mb-3">{person.quals}</p>
                 <p className="text-sm text-muted-foreground leading-relaxed">{person.bio}</p>
-              </div>
+              </article>
             </SectionReveal>
           ))}
         </div>

@@ -29,12 +29,12 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between section-padding py-4">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center gap-2" aria-label="VGEC — Home">
           <span className="font-serif text-2xl font-bold text-primary tracking-tight">VGEC</span>
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -53,6 +53,7 @@ const Header = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden p-2"
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <div className="space-y-1.5">
             <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
@@ -64,7 +65,7 @@ const Header = () => {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <nav className="md:hidden bg-card/95 backdrop-blur-md border-t border-border px-6 py-4 space-y-3">
+        <nav className="md:hidden bg-card/95 backdrop-blur-md border-t border-border px-6 py-4 space-y-3" aria-label="Mobile navigation">
           {navLinks.map((link) => (
             <a
               key={link.href}

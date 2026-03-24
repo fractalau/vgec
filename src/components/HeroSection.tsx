@@ -1,12 +1,15 @@
+import SectionReveal from "./SectionReveal";
+
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section aria-label="Hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/tower-hill-aerial.jpg')" }}
+        role="presentation"
       />
-      <div className="absolute inset-0 bg-earth-dark/65" />
+      <div className="absolute inset-0 bg-earth-dark/65" role="presentation" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center section-padding py-32">
         <p
@@ -45,7 +48,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-hidden="true">
         <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/40 flex items-start justify-center pt-2">
           <div className="w-1 h-2.5 rounded-full bg-primary-foreground/60" />
         </div>
