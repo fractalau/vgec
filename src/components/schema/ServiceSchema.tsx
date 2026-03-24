@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useHead } from "@unhead/react";
 import { seoConfig } from "@/config/seo";
 
 interface ServiceSchemaProps {
@@ -18,30 +18,27 @@ const ServiceSchema = ({
   areaServed,
   serviceType,
 }: ServiceSchemaProps) => {
-  useEffect(() => {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      name,
-      description,
-      url,
-      provider: provider ?? {
-        "@type": "Organization",
-        name: seoConfig.business.legalName,
-        url: seoConfig.siteUrl,
+  useHead({
+    script: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name,
+          description,
+          url,
+          provider: provider ?? {
+            "@type": "Organization",
+            name: seoConfig.business.legalName,
+            url: seoConfig.siteUrl,
+          },
+          ...(areaServed && { areaServed }),
+          ...(serviceType && { serviceType }),
+        }),
       },
-      ...(areaServed && { areaServed }),
-      ...(serviceType && { serviceType }),
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.setAttribute("data-schema-service", "true");
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    return () => { script.remove(); };
-  }, [name, description, url, provider, areaServed, serviceType]);
+    ],
+  });
 
   return null;
 };
