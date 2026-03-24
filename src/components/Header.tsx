@@ -52,9 +52,9 @@ const Header = () => {
           aria-expanded={menuOpen}
         >
           <div className="space-y-1.5">
-            <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-200 bg-foreground ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-200 bg-foreground ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-200 bg-foreground ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </div>
         </button>
       </div>
