@@ -37,9 +37,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                scrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
+              className="text-sm font-medium transition-colors duration-200 hover:text-primary text-foreground"
             >
               {link.label}
             </a>
