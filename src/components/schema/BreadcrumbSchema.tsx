@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 interface BreadcrumbItem {
   name: string;
@@ -10,22 +10,28 @@ interface BreadcrumbSchemaProps {
 }
 
 const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: item.url,
-    })),
-  };
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        item: item.url,
+      })),
+    };
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-schema-breadcrumb", "true");
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => { script.remove(); };
+  }, [items]);
+
+  return null;
 };
 
 export default BreadcrumbSchema;

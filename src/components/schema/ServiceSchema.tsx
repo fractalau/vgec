@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import { seoConfig } from "@/config/seo";
 
 interface ServiceSchemaProps {
@@ -18,26 +18,32 @@ const ServiceSchema = ({
   areaServed,
   serviceType,
 }: ServiceSchemaProps) => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name,
-    description,
-    url,
-    provider: provider ?? {
-      "@type": "Organization",
-      name: seoConfig.business.legalName,
-      url: seoConfig.siteUrl,
-    },
-    ...(areaServed && { areaServed }),
-    ...(serviceType && { serviceType }),
-  };
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name,
+      description,
+      url,
+      provider: provider ?? {
+        "@type": "Organization",
+        name: seoConfig.business.legalName,
+        url: seoConfig.siteUrl,
+      },
+      ...(areaServed && { areaServed }),
+      ...(serviceType && { serviceType }),
+    };
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-schema-service", "true");
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => { script.remove(); };
+  }, [name, description, url, provider, areaServed, serviceType]);
+
+  return null;
 };
 
 export default ServiceSchema;
