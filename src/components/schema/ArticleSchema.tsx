@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 
 interface ArticleSchemaProps {
   headline: string;
@@ -21,23 +21,29 @@ const ArticleSchema = ({
   url,
   type = "Article",
 }: ArticleSchemaProps) => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": type,
-    headline,
-    description,
-    author: { "@type": "Person", name: author },
-    datePublished,
-    ...(dateModified && { dateModified }),
-    ...(image && { image }),
-    url,
-  };
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": type,
+      headline,
+      description,
+      author: { "@type": "Person", name: author },
+      datePublished,
+      ...(dateModified && { dateModified }),
+      ...(image && { image }),
+      url,
+    };
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-schema-article", "true");
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+
+    return () => { script.remove(); };
+  }, [headline, description, author, datePublished, dateModified, image, url, type]);
+
+  return null;
 };
 
 export default ArticleSchema;
