@@ -11,7 +11,7 @@ const highlights = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-background">
+    <section id="about" aria-label="About the Project" className="py-24 md:py-32 bg-background">
       <div className="max-w-6xl mx-auto section-padding">
         <SectionReveal>
           <p className="text-primary font-semibold text-sm uppercase tracking-[0.15em] mb-3">About the Project</p>
@@ -27,7 +27,7 @@ const AboutSection = () => {
           {highlights.map((item, i) => (
             <SectionReveal key={i} delay={i * 80}>
               <div className="flex gap-4 items-start py-3">
-                <div className="mt-1 w-2 h-2 rounded-full bg-primary shrink-0" />
+                <div className="mt-1 w-2 h-2 rounded-full bg-primary shrink-0" aria-hidden="true" />
                 <p className="text-foreground leading-relaxed">{item}</p>
               </div>
             </SectionReveal>

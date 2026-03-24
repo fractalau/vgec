@@ -17,7 +17,7 @@ const benefits = [
 
 const ProjectSection = () => {
   return (
-    <section id="project" className="py-24 md:py-32 bg-earth-warm">
+    <section id="project" aria-label="Why Koroit" className="py-24 md:py-32 bg-earth-warm">
       <div className="max-w-6xl mx-auto section-padding">
         <SectionReveal>
           <p className="text-primary font-semibold text-sm uppercase tracking-[0.15em] mb-3">Why Koroit</p>
@@ -29,10 +29,10 @@ const ProjectSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-20">
           {advantages.map((item, i) => (
             <SectionReveal key={i} delay={i * 100}>
-              <div className="bg-card rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <article className="bg-card rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <h3 className="font-serif text-xl text-foreground mb-3">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
+              </article>
             </SectionReveal>
           ))}
         </div>
@@ -44,7 +44,7 @@ const ProjectSection = () => {
               <ul className="space-y-4">
                 {benefits.map((b, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-foreground">{b}</span>
@@ -55,7 +55,7 @@ const ProjectSection = () => {
             <div className="rounded-lg overflow-hidden shadow-lg">
               <img
                 src="/images/australia-temperature-map.jpg"
-                alt="Australia projected temperature at 5km depth showing geothermal potential"
+                alt="Australia projected temperature at 5km depth showing geothermal potential across the continent"
                 className="w-full h-auto"
                 loading="lazy"
               />

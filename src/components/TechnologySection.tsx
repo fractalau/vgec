@@ -9,7 +9,7 @@ const stats = [
 
 const TechnologySection = () => {
   return (
-    <section id="technology" className="py-24 md:py-32 bg-earth-dark text-primary-foreground">
+    <section id="technology" aria-label="Next-generation technology" className="py-24 md:py-32 bg-earth-dark text-primary-foreground">
       <div className="max-w-6xl mx-auto section-padding">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <SectionReveal>
@@ -35,7 +35,7 @@ const TechnologySection = () => {
               <div className="col-span-2 rounded-lg overflow-hidden shadow-lg">
                 <img
                   src="/images/drilling-rig.jpg"
-                  alt="Geothermal drilling rig"
+                  alt="Geothermal drilling rig operating at a well site"
                   className="w-full h-64 object-cover"
                   loading="lazy"
                 />
@@ -43,7 +43,7 @@ const TechnologySection = () => {
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img
                   src="/images/geothermal-model.jpg"
-                  alt="Geothermal well loop technology model"
+                  alt="Diagram of a closed-loop geothermal well technology model"
                   className="w-full h-48 object-cover"
                   loading="lazy"
                 />
