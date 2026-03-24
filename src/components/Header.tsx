@@ -22,10 +22,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-md"
-          : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-card/95 backdrop-blur-md ${
+        scrolled ? "shadow-md" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between section-padding py-4">
@@ -39,9 +37,7 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-primary ${
-                scrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
+              className="text-sm font-medium transition-colors duration-200 hover:text-primary text-foreground"
             >
               {link.label}
             </a>
@@ -56,9 +52,9 @@ const Header = () => {
           aria-expanded={menuOpen}
         >
           <div className="space-y-1.5">
-            <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-0.5 transition-all duration-200 ${scrolled ? "bg-foreground" : "bg-primary-foreground"} ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-200 bg-foreground ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-200 bg-foreground ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-200 bg-foreground ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
           </div>
         </button>
       </div>
