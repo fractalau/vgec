@@ -1,47 +1,62 @@
-import { useHead, useSeoMeta } from "@unhead/react";
-import { seoConfig } from "@/config/seo";
+import { useHead } from '@unhead/react'
+import { seoConfig } from '@/config/seo'
 
 interface SEOProps {
-  title?: string;
-  description?: string;
-  canonical?: string;
-  ogImage?: string;
-  ogType?: string;
-  noIndex?: boolean;
-  schema?: Record<string, unknown> | Record<string, unknown>[];
+  title?: string
+  description?: string
+  canonical?: string
+  ogImage?: string
+  ogType?: string
+  noIndex?: boolean
+  schema?: object | object[]
 }
 
-const SEO = ({
-  title = seoConfig.defaultTitle,
-  description = seoConfig.defaultDescription,
-  canonical = seoConfig.siteUrl,
-  ogImage = seoConfig.defaultOgImage,
-  ogType = "website",
+export const SEO = ({
+  title,
+  description,
+  canonical,
+  ogImage,
+  ogType = 'website',
   noIndex = false,
   schema,
 }: SEOProps) => {
-  useSeoMeta({
-    title,
-    description,
-    ogTitle: title,
-    ogDescription: description,
-    ogUrl: canonical,
-    ogType: ogType as "website",
-    ogSiteName: seoConfig.siteName,
-    ogImage: ogImage || undefined,
-    twitterCard: "summary_large_image",
-    twitterTitle: title,
-    twitterDescription: description,
-    twitterImage: ogImage || undefined,
-    ...(seoConfig.twitterHandle ? { twitterSite: seoConfig.twitterHandle } : {}),
-  });
+  const resolvedTitle = title ?? seoConfig.defaultTitle
+  const resolvedDescription = description ?? seoConfig.defaultDescription
+  const resolvedOgImage = ogImage ?? seoConfig.defaultOgImage
+  const resolvedCanonical = canonical ?? seoConfig.siteUrl
+
+  const schemaArray = schema
+    ? Array.isArray(schema)
+      ? schema
+      : [schema]
+    : []
 
   useHead({
-    title,
-    meta: [{ name: "description", content: description }],
-  });
+    title: resolvedTitle,
+    meta: [
+      { name: 'description', content: resolvedDescription },
+      { name: 'robots', content: noIndex ? 'noindex, nofollow' : 'index, follow' },
+      // Open Graph
+      { property: 'og:title', content: resolvedTitle },
+      { property: 'og:description', content: resolvedDescription },
+      { property: 'og:image', content: resolvedOgImage },
+      { property: 'og:url', content: resolvedCanonical },
+      { property: 'og:type', content: ogType },
+      { property: 'og:site_name', content: seoConfig.siteName },
+      // Twitter
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: resolvedTitle },
+      { name: 'twitter:description', content: resolvedDescription },
+      { name: 'twitter:image', content: resolvedOgImage },
+    ],
+    link: [
+      { rel: 'canonical', href: resolvedCanonical },
+    ],
+    script: schemaArray.map((s) => ({
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(s),
+    })),
+  })
 
-  return null;
-};
-
-export default SEO;
+  return null
+}
