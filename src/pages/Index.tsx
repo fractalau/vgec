@@ -9,9 +9,6 @@ import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import FAQSchema from "@/components/schema/FAQSchema";
-import ServiceSchema from "@/components/schema/ServiceSchema";
-import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import { seoConfig } from "@/config/seo";
 
 const Index = () => {
