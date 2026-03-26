@@ -4,7 +4,6 @@ const phases = [
   {
     phase: "Phase 1",
     title: "Proof of Concept",
-    year: "2026–2028",
     steps: [
       "Update velocity, seismic and temperature models",
       "Complete well designs, approvals and award tenders",
@@ -16,31 +15,28 @@ const phases = [
   {
     phase: "Phase 2",
     title: "Demonstration Plant",
-    year: "2028–2029",
     steps: ["Development and operation of a 10 MWe demonstration power plant"],
   },
   {
     phase: "Phase 3",
     title: "Production Expansion",
-    year: "2030–2031",
     steps: ["Development and operation of a 50 MWe generation expansion plant"],
   },
   {
     phase: "Phase 4",
     title: "Full Scale",
-    year: "2031+",
     steps: ["Development of a further 400 MWe using standardised 100 MWe plant modules"],
   },
 ];
 
 const TimelineSection = () => {
   return (
-    <section id="timeline" aria-label="Development roadmap" className="py-24 md:py-32 bg-earth-warm">
+    <section id="phases" aria-label="Project phases" className="py-24 md:py-32 bg-earth-warm">
       <div className="max-w-5xl mx-auto section-padding">
         <SectionReveal>
           <p className="text-primary font-semibold text-sm uppercase tracking-[0.15em] mb-3">Development Roadmap</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight text-balance mb-16">
-            Program Timetable
+            Project Phases
           </h2>
         </SectionReveal>
 
@@ -58,7 +54,6 @@ const TimelineSection = () => {
                   <article className="bg-card rounded-lg p-6 md:p-8 shadow-sm">
                     <div className="flex flex-wrap items-baseline gap-3 mb-3">
                       <span className="text-xs font-semibold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded">{phase.phase}</span>
-                      <time className="text-sm text-muted-foreground tabular-nums">{phase.year}</time>
                     </div>
                     <h3 className="font-serif text-xl text-foreground mb-3">{phase.title}</h3>
                     <ul className="space-y-2">

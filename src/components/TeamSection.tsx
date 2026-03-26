@@ -18,15 +18,15 @@ const team = [
   {
     name: "Bob Graham",
     role: "Director",
-    quals: "BEng (Mech), MBA, MIEAust, GAICD",
+    quals: "BEng (Mech), MBA, GAICD",
     bio: "Engineer with 40+ years in the electricity industry, from power stations to privatisations at Hazelwood and Loy Yang. Former director of McLennan Magasanik Associates.",
     photo: "/images/team-bob-graham.jpg",
   },
   {
-    name: "Luis Urzua",
-    role: "Geothermal Consultant",
-    quals: "BSc (Geol), MSc, MGRC",
-    bio: "Geothermal geologist with 24 years experience in exploration, resource assessment and operations. Involved in drilling 40 wells to depths of up to 3,800m across multiple countries.",
+    name: "Bob Graham",
+    role: "Director",
+    quals: "BEng (Mech), MBA, GAICD",
+    bio: "Engineer with 40+ years in the electricity industry, from power stations to privatisations at Hazelwood and Loy Yang. Former director of McLennan Magasanik Associates.",
     photo: "/images/team-luis-urzua.jpg",
   },
   {
