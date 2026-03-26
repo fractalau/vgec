@@ -49,16 +49,13 @@ const HeroSection = () => {
 
       {/* AGA Corporate Member badge */}
       <div className="absolute bottom-20 right-6 md:right-12 z-10 animate-fade-in" style={{ animationDelay: "1s" }}>
-        <div className="bg-primary-foreground/95 backdrop-blur-sm rounded-lg px-4 py-3 flex items-center gap-3 shadow-lg">
+        <div className="flex flex-col items-center gap-1.5">
+          <p className="text-[10px] uppercase tracking-widest font-semibold text-primary-foreground">Corporate Member</p>
           <img
             src="/images/aga-logo.png"
             alt="Australian Geothermal Association logo"
-            className="w-10 h-10 object-contain"
+            className="w-28 h-auto object-contain"
           />
-          <div className="text-earth-dark">
-            <p className="text-[10px] uppercase tracking-widest font-semibold text-muted-foreground">Corporate Member</p>
-            <p className="text-xs font-medium">Australian Geothermal Association</p>
-          </div>
         </div>
       </div>
 
