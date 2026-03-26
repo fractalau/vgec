@@ -54,7 +54,7 @@ const HeroSection = () => {
           <img
             src="/images/aga-logo.png"
             alt="Australian Geothermal Association logo"
-            className="w-28 h-auto object-contain"
+            className="w-36 h-auto object-contain"
           />
         </div>
       </div>
