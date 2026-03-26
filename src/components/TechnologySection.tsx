@@ -25,7 +25,7 @@ const TechnologySection = () => {
                 Drilling time has fallen from over 70 days for a 3,400m well to just 16 days for a 4,805m well in 2025. Gathering pipe system costs have dropped from 24% to just 2% of capital costs.
               </p>
               <p>
-                HSA, EGS and AGS geothermal systems are commercial now. The IEA projects geothermal could grow from under 1% to 8% of global demand by 2050 — equivalent to 800 GW of new capacity.
+                HSA, Enhanced Geothermal Systems (EGS) and Advanced Geothermal Systems (AGS) geothermal systems are commercial now. The IEA projects geothermal could grow from under 1% to 8% of global demand by 2050 — equivalent to 800 GW of new capacity.
               </p>
             </div>
           </SectionReveal>

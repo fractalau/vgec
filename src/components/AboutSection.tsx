@@ -3,7 +3,7 @@ import SectionReveal from "./SectionReveal";
 const highlights = [
   "Advanced geothermal project at Proof-of-Concept stage",
   "100% owned Geothermal Retention Lease (GRL007012) — second ever granted in Australia",
-  "Naturally fractured Hot Sedimentary Aquifer — no fracking required",
+  "Naturally fractured Hot Sedimentary Aquifer (HSA) — no fracking required",
   "Potential to generate over 1,400 MW of electricity for 30+ years",
   "Next-generation technologies driving costs toward US$50/MWh by 2030",
   "Seeking partners and investors for Proof-of-Concept program",
@@ -18,8 +18,11 @@ const AboutSection = () => {
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight text-balance mb-6">
             A Step-Change in Geothermal Energy
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mb-12">
+          <p className="text-muted-foreground text-lg max-w-3xl mb-4">
             Koroit is an advanced geothermal power project benefiting from a global revolution in next-generation technologies that are driving down costs and commercialising geothermal projects worldwide.
+          </p>
+          <p className="text-muted-foreground/60 text-sm italic max-w-3xl mb-12">
+            This information has been assembled by Victorian Geothermal Energy Company to provide general information about the Company. This is in summary form and should not be relied upon as a complete and accurate representation of any matters that a reader should consider in evaluating the Company.
           </p>
         </SectionReveal>
 

@@ -5,10 +5,11 @@ import ProjectSection from "@/components/ProjectSection";
 import TechnologySection from "@/components/TechnologySection";
 import ResourceSection from "@/components/ResourceSection";
 import TimelineSection from "@/components/TimelineSection";
+import NewsSection from "@/components/NewsSection";
 import TeamSection from "@/components/TeamSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
+import { SEO } from "@/components/SEO";
 import { seoConfig } from "@/config/seo";
 
 const Index = () => {
@@ -27,6 +28,7 @@ const Index = () => {
         <TechnologySection />
         <ResourceSection />
         <TimelineSection />
+        <NewsSection />
         <TeamSection />
         <ContactSection />
       </main>

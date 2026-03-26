@@ -18,7 +18,7 @@ const team = [
   {
     name: "Bob Graham",
     role: "Director",
-    quals: "BEng (Mech), MBA, MIEAust, GAICD",
+    quals: "BEng (Mech), MBA, GAICD",
     bio: "Engineer with 40+ years in the electricity industry, from power stations to privatisations at Hazelwood and Loy Yang. Former director of McLennan Magasanik Associates.",
     photo: "/images/team-bob-graham.jpg",
   },
